@@ -9,25 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var mock_heroes_1 = require('./mock-heroes');
-var HeroService = (function () {
-    function HeroService() {
+var AppComponent = (function () {
+    function AppComponent() {
+        this.title = 'Tour of Heroes';
     }
-    HeroService.prototype.getHeroes = function () {
-        return Promise.resolve(mock_heroes_1.HEROES);
-    };
-    HeroService.prototype.getHeroesSlowly = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            return setTimeout(resolve, 2000);
-        }) //delay 2 seconds
-            .then(function () { return _this.getHeroes(); });
-    };
-    HeroService = __decorate([
-        core_1.Injectable(), 
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n    <h1>{{title}}</h1>\n    <my-heroes></my-heroes>\n    "
+        }), 
         __metadata('design:paramtypes', [])
-    ], HeroService);
-    return HeroService;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.conponent.js.map
